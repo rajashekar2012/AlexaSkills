@@ -1,0 +1,23 @@
+{
+  "name": "alexaskill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajashekar2012/AlexaSkills.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajashekar2012/AlexaSkills/issues"
+  },
+  "homepage": "https://github.com/rajashekar2012/AlexaSkills#readme",
+  "dependencies": {
+    "alexa-app": "^2.3.4"
+  },
+  "devDependencies": {}
+}
