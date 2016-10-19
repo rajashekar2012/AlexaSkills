@@ -26,8 +26,8 @@ app.intent('getMarks',
 		"tell me how much did {john|studentName} scored"]
   },
   function(request,response) {
-    var studentName = request.slot('studentName');
-    response.say(studentName+" has scored 82 percent");
+   // var studentName = request.slot('studentName');
+    response.say("john has scored 82 percent");
   }
 );
 
