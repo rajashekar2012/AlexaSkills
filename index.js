@@ -65,17 +65,17 @@ app.intent('getMarks',
 
 app.intent('compareMarks',
   {
-    "slots":{"studentName":"LITERAL","studentName1":"LITERAL","subject":"LITERAL"},
+    "slots":{"firstStudent":"LITERAL","secondeStudent":"LITERAL","subject":"LITERAL"},
     "utterances":[ 
-		"who scored more {john|studentName} or {linda|studentName1}",
-		"compare test results of  {john|studentName} or {linda|studentName1}",
-		"who scored more {john|studentName} or {linda|studentName1} in {physics|subject}",
-		"compare test results of  {john|studentName} or {linda|studentName1} in {physics|subject}"
+		"who scored more {john|firstStudent} or {linda|secondeStudent}",
+		"compare test results of  {john|firstStudent} or {linda|secondeStudent}",
+		"who scored more {john|firstStudent} or {linda|secondeStudent} in {physics|subject}",
+		"compare test results of  {john|firstStudent} or {linda|secondeStudent} in {physics|subject}"
 		]
   },
   function(request,response) {
-    var studentName = request.slot('studentName');
-    var studentName1 = request.slot('studentName1');
+    var studentName = request.slot('firstStudent');
+    var studentName1 = request.slot('secondeStudent');
     var subject=request.slot('subject');
 
     console.log("student:"+studentName);
