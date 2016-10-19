@@ -5,7 +5,6 @@ var alexa = require( 'alexa-app' );
 var app = new alexa.app( 'test-skill' );
 
 var buddy={
-marks:{
 	john:{
 		name:"john",
 		percent:82,
@@ -18,7 +17,7 @@ marks:{
 		percent:65,
 		math:69,
 		physics:70,
-		english:66 }
+		english:66 
 	}
 };
 
@@ -41,14 +40,17 @@ app.intent('getMarks',
 		"how much did {john|studentName} scored",
 		"give me the test score of {john|studentName}",
 		"tell me how much did {john|studentName} scored",
-		
-		"how much did {john|studentName} scored in {physics|subject} ",
+
+		"how much did {john|studentName} scored in {physics|subject}",
 		"tell me how much did {john|studentName} scored in {physics|subject}"
 		]
   },
   function(request,response) {
     var studentName = request.slot('studentName');
     var subject=request.slot('subject');
+
+    console.log("student:"+studentName);
+    console.log("subject:"+subject);
 
     if(subject)
     {
