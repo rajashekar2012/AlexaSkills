@@ -63,4 +63,53 @@ app.intent('getMarks',
   }
 );
 
+app.intent('compareMarks',
+  {
+    "slots":{"studentName":"LITERAL","studentName1":"LITERAL","subject":"LITERAL"},
+    "utterances":[ 
+		"who scored more {john|studentName} or {linda|studentName1}",
+		"compare test results of  {john|studentName} or {linda|studentName1}",
+		"who scored more {john|studentName} or {linda|studentName1} in {physics|subject}",
+		"compare test results of  {john|studentName} or {linda|studentName1} in {physics|subject}"
+		]
+  },
+  function(request,response) {
+    var studentName = request.slot('studentName');
+    var studentName1 = request.slot('studentName1');
+    var subject=request.slot('subject');
+
+    console.log("student:"+studentName);
+    console.log("student1:"+studentName1);
+
+    if(subject||subject=="")
+    {
+    	console.log("compare in subject");
+
+    	var s1_subj=buddy[studentName][subject];
+    	var s2_subj=buddy[studentName1][subject];
+
+    	var ls="",us="";
+
+    	if(s1_subj<s2_subj)
+    	{
+    		ls=studentName;
+    		us=studentName1;
+    	}
+    	else
+    	{
+    		us=studentName1;
+    		ls=studentName;
+    	}
+
+    	response.say(us+" has topped in "+ subject+" with "+s1_subj+" while "+ls+" scored "+ s2_subj);
+    }
+    else
+    {
+    	console.log("compare total");
+    	response.say("jhon has scored more than linda. John score is 82 while linda scored 65");	
+    }
+	
+  }
+);
+
 module.exports = app;
