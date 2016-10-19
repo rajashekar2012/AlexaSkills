@@ -17,18 +17,17 @@ app.error = function( exception, request, response ) {
 	response.say( 'Sorry an error occured ' + error.message);
 };
 
-app.intent('sayNumber',
+app.intent('getMarks',
   {
-    "slots":{"number":"NUMBER"}
-	,"utterances":[ 
-		"say the number {1-100|number}",
-		"give me the number {1-100|number}",
-		"tell me the number {1-100|number}",
-		"I want to hear you say the number {1-100|number}"]
+    "slots":{"studentName":"LITERAL"},
+    "utterances":[ 
+		"how much did {john|studentName} scored",
+		"give me the test score of {john|studentName}",
+		"tell me how much did {john|studentName} scored"]
   },
   function(request,response) {
-    var number = request.slot('number');
-    response.say("You asked for the number "+number);
+    var studentName = request.slot('studentName');
+    response.say(studentName+" has scored 82 percent");
   }
 );
 
