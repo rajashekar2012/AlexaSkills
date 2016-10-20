@@ -12,7 +12,7 @@ var buddy={
 		physics:88,
 		english:86
 	},
-	linda:{
+	pete:{
 		name:"linda",
 		percent:65,
 		mathematics:69,
