@@ -18,7 +18,7 @@ var buddy={
 		mathematics:69,
 		physics:70,
 		english:66 
-	}
+	} 
 };
 
 app.launch( function( request, response ) {
