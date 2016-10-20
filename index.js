@@ -111,7 +111,7 @@ app.intent('compareMarks',
     else
     {
     	console.log("compare total");
-    	response.say("jhon has scored more than linda. John score is 82 while linda scored 65").shouldEndSession( false );	
+    	response.say("jhon has scored more than pete. John score is 82 while pete scored 65").shouldEndSession( false );	
     }
 	
   }
