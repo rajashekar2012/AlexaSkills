@@ -22,7 +22,7 @@ var buddy={
 };
 
 app.launch( function( request, response ) {
-	response.say( 'Welcome to your test skill' ).reprompt( 'Way to go. You got it to run. Bad ass.' ).shouldEndSession( false );
+	response.say( 'Welcome to your test skill' ).reprompt( 'Way to go. You got it to run' ).shouldEndSession( false );
 } );
 
 
@@ -52,8 +52,11 @@ app.intent('getMarks',
     console.log("student:"+studentName);
     console.log("subject:"+subject);
 
+    studentName=studentName.toLowerCase();
+
     if(subject)
     {
+    	subject=subject.toLowerCase();
     	response.say(studentName+" has scored "+ buddy[studentName][subject] +" in "+subject);
     }
     else
@@ -74,8 +77,8 @@ app.intent('compareMarks',
 		]
   },
   function(request,response) {
-    var studentName = request.slot('firstStudent');
-    var studentName1 = request.slot('secondeStudent');
+    var studentName = request.slot('firstStudent').toLowerCase();
+    var studentName1 = request.slot('secondeStudent').toLowerCase();
     var subject=request.slot('subject');
 
     console.log("student:"+studentName);
@@ -83,6 +86,8 @@ app.intent('compareMarks',
 
     if(subject||subject=="")
     {
+    	subject=subject.toLowerCase();
+    	
     	console.log("compare in subject");
 
     	var s1_subj=buddy[studentName][subject];
