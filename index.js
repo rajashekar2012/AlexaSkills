@@ -8,14 +8,14 @@ var buddy={
 	john:{
 		name:"john",
 		percent:82,
-		math:95,
+		mathematics:95,
 		physics:88,
 		english:86
 	},
 	linda:{
 		name:"linda",
 		percent:65,
-		math:69,
+		mathematics:69,
 		physics:70,
 		english:66 
 	}
@@ -87,7 +87,7 @@ app.intent('compareMarks',
     if(subject||subject=="")
     {
     	subject=subject.toLowerCase();
-    	
+
     	console.log("compare in subject");
 
     	var s1_subj=buddy[studentName][subject];
@@ -116,5 +116,7 @@ app.intent('compareMarks',
 	
   }
 );
+
+app.sessionEnded()
 
 module.exports = app;
