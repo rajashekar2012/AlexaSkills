@@ -57,11 +57,11 @@ app.intent('getMarks',
     if(subject)
     {
     	subject=subject.toLowerCase();
-    	response.say(studentName+" has scored "+ buddy[studentName][subject] +" in "+subject);
+    	response.say(studentName+" has scored "+ buddy[studentName][subject] +" in "+subject).shouldEndSession( false );
     }
     else
     {
-    	response.say(studentName+" has scored "+ buddy[studentName]["percent"] +" percent");
+    	response.say(studentName+" has scored "+ buddy[studentName]["percent"] +" percent").shouldEndSession( false );
     }
   }
 );
@@ -106,12 +106,12 @@ app.intent('compareMarks',
     		ls=studentName;
     	}
 
-    	response.say(us+" has topped in "+ subject+" with "+s1_subj+" while "+ls+" scored "+ s2_subj);
+    	response.say(us+" has topped in "+ subject+" with "+s1_subj+" while "+ls+" scored "+ s2_subj).shouldEndSession( false );
     }
     else
     {
     	console.log("compare total");
-    	response.say("jhon has scored more than linda. John score is 82 while linda scored 65");	
+    	response.say("jhon has scored more than linda. John score is 82 while linda scored 65").shouldEndSession( false );	
     }
 	
   }
