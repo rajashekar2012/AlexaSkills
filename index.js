@@ -22,7 +22,7 @@ var buddy={
 };
 
 app.launch( function( request, response ) {
-	response.say( 'Welcome to Study buddy.How may i help you.' ).reprompt( 'Way to go. You got it to run' ).shouldEndSession( false );
+	response.say( 'Welcome to Study buddy How may i help you.' ).reprompt( 'Way to go. You got it to run' ).shouldEndSession( false );
 } );
 
 
